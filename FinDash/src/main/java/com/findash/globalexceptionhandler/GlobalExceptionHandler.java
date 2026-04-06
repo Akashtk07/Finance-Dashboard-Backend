@@ -48,7 +48,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ApiResponse<?>> handleGeneric(Exception ex) {
 
-        ex.printStackTrace(); // 👈 ADD THIS
+        ex.printStackTrace();
 
         return ResponseEntity.status(500)
                 .body(new ApiResponse<>(false, ex.getMessage(), null));
